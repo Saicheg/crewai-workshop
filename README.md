@@ -8,7 +8,7 @@ This repo contains demos and code samples for the [Crew AI](https://github.com/c
 
 - Basics (Agent / Task / Crew / LLM)
 - Structured output (Pydantic)
-- Multiple agents (Multiple Tasks / Multiple Agents / Conditional Tasks)
+- Multiple agents (Multiple Tasks / Multiple Agents)
 - Tracing (Phoenix setup)
 - Tools (CrewAI Tools / LangChainTools)
 - More building blocks (Conditional Tasks / Guardrails)
