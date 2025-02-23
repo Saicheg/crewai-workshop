@@ -12,6 +12,7 @@ dependencies = [
     "openinference-instrumentation-crewai==0.1.4",
     "openinference-instrumentation-litellm==0.1.6",
     "setuptools>=42",
+    "youtube_search>=2.1.2",
 ]
 
 [build-system]
