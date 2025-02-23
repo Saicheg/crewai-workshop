@@ -1,10 +1,11 @@
 from crewai import Agent, Task, Crew
 from textwrap import dedent
-
+from shared.llm import LMSTUDIO_DEEPSEEK_LLM
 
 def tell_joke(topic: str) -> str:
     # Create a comedian agent
     comedian = Agent(
+        llm=LMSTUDIO_DEEPSEEK_LLM,
         role='Comedian',
         goal='Create hilarious and engaging jokes',
         backstory=dedent("""

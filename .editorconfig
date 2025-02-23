@@ -1,0 +1,19 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# This is the project's root directory
+root = true
+
+# All files
+[*]
+
+# Use Unix line endings
+end_of_line = lf
+
+# The files are utf-8 encoded
+charset = utf-8
+
+# No whitespace at the end of line
+trim_trailing_whitespace = true
+
+# A file must end with an empty line. This is good for version control systems. And requirement for PEP8
+insert_final_newline = true

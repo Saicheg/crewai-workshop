@@ -12,6 +12,9 @@ services:
     volumes:
       - ./${DYNAMIC_DEMO_FOLDER}/run.py:/app/run.py
       - ./${DYNAMIC_DEMO_FOLDER}/src:/app/src/
+      - ./shared/:/app/src/shared/
+    networks:
+      - default
 
   phoenix:
     image: arizephoenix/phoenix:latest
@@ -20,13 +23,17 @@ services:
       - "6006:6006"
     depends_on:
       - phoenix-db
+    networks:
+      - default
 
   phoenix-db:
     image: "postgres:16.4-alpine"
     env_file: .env
     volumes:
       - phoenix-data:/var/lib/postgresql/data
-  
+    networks:
+      - default
+
   dind:
     image: docker:27.5.0-dind-alpine3.21
     command: --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock
@@ -37,3 +44,6 @@ services:
 
 volumes:
   phoenix-data:
+
+networks:
+  default:
