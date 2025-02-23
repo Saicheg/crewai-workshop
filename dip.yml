@@ -1,0 +1,14 @@
+version: "8.0"
+
+environment:
+  DIP_COMPOSE_COMMAND: ./bin/docker-with-dynamic-src-folder compose
+
+compose:
+  files:
+    - docker-compose.yml
+  project_name: crewai-workshop
+
+interaction:
+  crewai:
+    description: Run commands within crewai service
+    service: crewai

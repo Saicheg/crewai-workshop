@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+set -e
+
+if [ -z "${DEMO}" ]; then
+  echo "DEMO env var is not set"
+  exit 1
+fi
+
+DYNAMIC_DEMO_FOLDER=$(find demos -type d -name "*${DEMO}_*" | head -n 1)
+
+printf "DYNAMIC_DEMO_FOLDER: %s\n" "${DYNAMIC_DEMO_FOLDER}"
+
+DYNAMIC_DEMO_FOLDER=${DYNAMIC_DEMO_FOLDER} docker "${@}"

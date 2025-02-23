@@ -1,0 +1,39 @@
+name: crewai-workshop
+
+services:
+  crewai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    depends_on:
+      - phoenix
+      - dind
+    volumes:
+      - ./${DYNAMIC_DEMO_FOLDER}/run.py:/app/run.py
+      - ./${DYNAMIC_DEMO_FOLDER}/src:/app/src/
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    env_file: .env
+    ports:
+      - "6006:6006"
+    depends_on:
+      - phoenix-db
+
+  phoenix-db:
+    image: "postgres:16.4-alpine"
+    env_file: .env
+    volumes:
+      - phoenix-data:/var/lib/postgresql/data
+  
+  dind:
+    image: docker:27.5.0-dind-alpine3.21
+    command: --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock
+    environment:
+      - DOCKER_TLS_CERTDIR=   # Disable TLS
+    networks:
+      - default
+
+volumes:
+  phoenix-data:

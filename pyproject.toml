@@ -1,0 +1,28 @@
+[project]
+name = "CrewAIWorkshop"
+version = "0.0.1"
+description = "Demos for CrewAI Workshop"
+authors = [{ name = "Valiantsin Zavadski", email = "val@awerty.ai" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "arize-phoenix==7.9.2",
+    "asyncio==3.4.3",
+    "crewai[tools]>=0.95.0,<1.0.0",
+    "litellm>=1.61.1",
+    "openinference-instrumentation-crewai==0.1.4",
+    "openinference-instrumentation-litellm==0.1.6",
+    "setuptools>=42",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]  # Or another build backend
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}  # This maps the root package to the "src" directory
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.crewai]
+type = "crew"
