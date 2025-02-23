@@ -2,17 +2,17 @@
 
 ## Intro
 
-This repo contains demos and code samples for the [Crew AI](https://github.com/crewAIInc/crewAI) workshop. 
+This repo contains demos and code samples for the [Crew AI](https://github.com/crewAIInc/crewAI) workshop.
 
 ## Workshop Plan
 
 - Basics (Agent / Task / Crew / LLM)
+- Structured output (Pydantic)
 - Multiple agents (Multiple Tasks / Multiple Agents / Conditional Tasks)
 - Tracing (Phoenix setup)
 - Tools (CrewAI Tools / LangChainTools)
 - More building blocks (Conditional Tasks / Guardrails)
 - CLI (Training / Testing / Chat)
-- Structured output (Pydantic)
 - Knowledge (JSON / PDF / RAG)
 - Memory (ShortTermMemory / LongTermMemory / EntityMemory / UserMemory)
 - Coding execution (CodingAgent)
