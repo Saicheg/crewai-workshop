@@ -1,0 +1,39 @@
+fetch_videos_information:
+  description: >
+    Search and collect the 5 most recent videos from the specified YouTube channel {channel}.
+    Research and gather detailed information about a specific YouTube video.
+    The videos should be sorted by upload date with the most recent first.
+  expected_output: >
+    A list containing URLs of the 5 most recent videos from the channel
+
+create_joke:
+  description: >
+    Create a funny joke about one of recent videos from youtube channel {channel}
+    The joke should be original, appropriate, and entertaining.
+    Format it nicely with setup and punchline.
+  expected_output: >
+    A funny joke about the given topic
+
+research_channel:
+  description: >
+    Research and gather comprehensive information about the YouTube channel {channel}.
+    Include details such as:
+    - Channel description and main content focus
+    - Subscriber count and total views
+    - Creation date
+    - Upload frequency
+    - Popular video categories
+    - Any notable achievements or milestones
+  expected_output: >
+    A detailed summary of the channel's profile, statistics, and content strategy
+
+lookup_in_wikipedia:
+  description: >
+    Search and extract relevant information from Wikipedia about a given topic.
+    The search should return:
+    - A concise summary of the topic
+    - Key facts and details
+    - Notable references or related topics
+    - Any relevant dates or historical context
+  expected_output: >
+    A comprehensive summary of the Wikipedia article containing key information and facts about the searched topic

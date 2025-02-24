@@ -12,6 +12,7 @@ This repo contains demos and code samples for the [Crew AI](https://github.com/c
 - Tracing (Phoenix setup)
 - Tools (CrewAI Tools / LangChainTools)
 - More building blocks (Conditional Tasks / Guardrails)
+- Tasks Advanced flows ( Async Tasks Executions )
 - CLI (Training / Testing / Chat)
 - Knowledge (JSON / PDF / RAG)
 - Memory (ShortTermMemory / LongTermMemory / EntityMemory / UserMemory)
