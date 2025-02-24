@@ -1,5 +1,6 @@
 # Ignore env files
 .env
+demos/**/src/shared
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
