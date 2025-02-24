@@ -1,10 +1,10 @@
 find_latest_videos:
   description: >
-    Search and collect the 3 most recent videos from the specified YouTube channel {channel}.
+    Search and collect the 5 most recent videos from the specified YouTube channel {channel}.
     Return only the video URLs in a list format.
     The videos should be sorted by upload date with the most recent first.
   expected_output: >
-    A list containing URLs of the 3 most recent videos from the channel
+    A list containing URLs of the 5 most recent videos from the channel
 
 fetch_videos_information:
   description: >

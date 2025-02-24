@@ -6,12 +6,50 @@ from .tools import YouTubeSearchToolWrapper
 from crewai.tasks.task_output import TaskOutput
 from crewai.tasks.conditional_task import ConditionalTask
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
+from typing import Any, Dict, List, Tuple, Union
+
+PHRASES_INDICATING_THAN_SOMETHING_IS_WRONG_REGEXP = [
+        "Copyright",
+        "Privacy Policy",
+        "Before you continue to YouTube",
+        "Short Video",
+        "Long Video",
+]
 
 def not_enough_information(output: TaskOutput) -> bool:
     information = output.pydantic
-    if len(information.videos) < 5:
+    if len(information.videos) < 3:
         return True
     return False
+
+def validate_videos_information_correct(output: TaskOutput) -> Tuple[bool, Any]:
+    information = output.pydantic
+    videos = information.videos
+
+    if not videos:
+        return (False, {"error": "Empty result", "code": "EMPTY_INPUT"})
+
+    filtered = []
+
+    for video in videos:
+        selected = True
+
+        if not video.title:
+            selected = False
+
+        for phrase in PHRASES_INDICATING_THAN_SOMETHING_IS_WRONG_REGEXP:
+            if phrase in video.title:
+                selected = False
+                break
+
+        if selected:
+            filtered.append(video)
+
+    if not filtered:
+        return (False, {"error": "Failed to parse any videos", "code": "EMPTY_INPUT"})
+
+    return (True, VideosInformation(videos=filtered))
+
 
 @CrewBase
 class CreateJokeCrew():
@@ -57,7 +95,8 @@ class CreateJokeCrew():
         return Task(
             config=self.tasks_config['fetch_videos_information'],
             agent=self.videos_researcher(),
-            output_pydantic=VideosInformation
+            output_pydantic=VideosInformation,
+            guardrail=validate_videos_information_correct,
         )
 
     @task
