@@ -1,0 +1,17 @@
+research_breweries:
+  description: >
+    Analyze the breweries database and provide detailed information about the top breweries
+    in the specified location. Include:
+    1. Brewery names and locations
+    2. Specialties and notable beers
+    3. Unique features or historical significance
+    4. Visitor ratings and reviews if available
+
+    Make sure to focus on the most highly-rated and historically significant breweries in the area.
+    Make sure if informations is avaiable you return actual name insread of old name.
+  expected_output: >
+    A comprehensive report about the top 5 breweries in the specified location, including all
+    requested details and any additional interesting information.
+
+    Localtion: {location}
+  agent: brewery_researcher
