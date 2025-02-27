@@ -1,0 +1,6 @@
+create_joke:
+  description: >
+    Create a funny joke about {topic}.
+    Make it original and entertaining.
+  expected_output: >
+    A funny joke about the given topic

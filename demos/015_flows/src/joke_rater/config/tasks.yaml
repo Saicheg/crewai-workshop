@@ -1,0 +1,10 @@
+rate_joke:
+  description: >
+    Rate the following joke on a scale from 0 to 100 based on how funny it is:
+    
+    {joke}
+    
+    Consider factors like originality, cleverness, and overall entertainment value.
+    You must return ONLY a score between 0 and 100 as an integer.
+  expected_output: >
+    A score from 0 to 100 representing how funny the joke is 
