@@ -1,0 +1,7 @@
+process_user_request:
+  description: >
+    You are performing tasks and answer user message.
+    Find and provide quality answer to user message.
+    User message: {user_request}
+  expected_output: >
+    Result with answer for user message or result of some coworker response.

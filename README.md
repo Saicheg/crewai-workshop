@@ -17,6 +17,6 @@ This repo contains demos and code samples for the [Crew AI](https://github.com/c
 - Knowledge (JSON / PDF / RAG)
 - Memory (ShortTermMemory / LongTermMemory / EntityMemory / UserMemory)
 - Coding execution (CodingAgent)
-- Planning (Planner LLM)
 - Collaboration + Manager (Manager LLM / Hierarchical Execution)
+- Planning (Planner LLM)
 - Flows (Basics/State/Control/Router)
