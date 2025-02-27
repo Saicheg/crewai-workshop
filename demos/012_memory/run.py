@@ -1,9 +1,11 @@
 from joke_teller.crew import CreateJokeCrew
+from shared.tracing import traceable
 from mem0 import MemoryClient
 
 client = MemoryClient()
 
-if __name__ == '__main__':
+@traceable
+def main():
     messages = []
     user = "valentine"
 
@@ -24,3 +26,7 @@ if __name__ == '__main__':
             {"role": "user", "content": feedback},
         ]
         client.add(messages, user_id=user)
+
+
+if __name__ == '__main__':
+    main()

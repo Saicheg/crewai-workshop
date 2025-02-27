@@ -18,7 +18,7 @@ services:
       - default
 
   phoenix:
-    image: arizephoenix/phoenix:latest
+    image: arizephoenix/phoenix:version-8.2.2
     env_file: .env
     ports:
       - "6006:6006"
@@ -37,7 +37,8 @@ services:
 
   dind:
     image: docker:27.5.0-dind-alpine3.21
-    command: --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock
+    command: --host=tcp://0.0.0.0:2375
+    privileged: true
     environment:
       - DOCKER_TLS_CERTDIR=   # Disable TLS
     networks:

@@ -1,0 +1,16 @@
+generate_result:
+  description: >
+    Write and execute Python code that generates a random result for the Heads or Tails game.
+    The code should generate a random number between 0 and 1. If the number is greater than 0.5,
+    return "Head", otherwise return "Tail". Make sure to use the code_interpreter tool to execute
+    the code and return the result.
+  expected_output: >
+    The randomly generated result (either "Head" or "Tail")
+
+evaluate_result:
+  description: >
+    Evaluate if the player won or lost the Heads or Tails game. Compare the player's guess ({player_guess})
+    with the actual result return from previous task. If they match, the player wins. If they don't match,
+    the player loses. Provide an engaging and entertaining response announcing the result.
+  expected_output: >
+    A clear and entertaining announcement of whether the player won or lost
