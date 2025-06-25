@@ -7,9 +7,6 @@ print(os.getenv('DOCKER_HOST'))
 
 @CrewBase
 class HeadsOrTailsCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def game_generator_agent(self) -> Agent:
         return Agent(

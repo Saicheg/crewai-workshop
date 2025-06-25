@@ -11,9 +11,6 @@ user_json = JSONKnowledgeSource(
 
 @CrewBase
 class PersonalAssistantCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def comedian_agent(self) -> Agent:
         return Agent(

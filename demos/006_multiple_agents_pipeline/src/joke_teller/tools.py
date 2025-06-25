@@ -10,6 +10,7 @@ class YouTubeSearchToolWrapperSchema(BaseModel):
 class YouTubeSearchToolWrapper(BaseTool):
     name: str = "Search"
     description: str = "Search for videos on YouTube"
+
     search: YouTubeSearchTool = Field(default_factory=YouTubeSearchTool)
     args_schema: Type[BaseModel] = YouTubeSearchToolWrapperSchema
 

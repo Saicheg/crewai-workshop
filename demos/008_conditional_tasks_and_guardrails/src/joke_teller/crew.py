@@ -53,9 +53,6 @@ def validate_videos_information_correct(output: TaskOutput) -> Tuple[bool, Any]:
 
 @CrewBase
 class CreateJokeCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def channel_researcher(self) -> Agent:
         return Agent(

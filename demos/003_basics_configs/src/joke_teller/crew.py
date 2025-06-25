@@ -3,9 +3,6 @@ from crewai.project import CrewBase, agent, crew, task
 
 @CrewBase
 class CreateJokeCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def comedian_agent(self) -> Agent:
         return Agent(

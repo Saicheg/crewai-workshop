@@ -11,9 +11,6 @@ from typing import Any, Dict, List, Tuple, Union
 
 @CrewBase
 class CreateJokeCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def videos_researcher(self) -> Agent:
         return Agent(

@@ -6,9 +6,6 @@ from crewai_tools import ScrapeWebsiteTool
 
 @CrewBase
 class CreateJokeCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def channel_researcher(self) -> Agent:
         return Agent(

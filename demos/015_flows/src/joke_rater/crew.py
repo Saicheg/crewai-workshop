@@ -4,9 +4,6 @@ from .joke_rating import JokeRating
 
 @CrewBase
 class JokeRaterCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def comedy_critic_agent(self) -> Agent:
         return Agent(

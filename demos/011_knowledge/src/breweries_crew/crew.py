@@ -11,9 +11,6 @@ search_tool = JSONSearchTool(json_path='knowledge/breweries.json')
 
 @CrewBase
 class BreweriesCrew():
-    agents_config = 'config/agents.yaml'
-    tasks_config = 'config/tasks.yaml'
-
     @agent
     def brewery_researcher(self) -> Agent:
         return Agent(

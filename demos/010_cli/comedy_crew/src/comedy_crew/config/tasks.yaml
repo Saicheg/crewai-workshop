@@ -1,0 +1,30 @@
+create_joke_task:
+  description: >
+    Create a hilarious and original joke about {topic}.
+    The joke should be clever, well-structured, and appropriate for a general audience.
+    Make sure to use proper comedic timing and delivery in your writing.
+  expected_output: >
+    A well-crafted joke about {topic} that includes:
+    1. A clear setup
+    2. A clever punchline
+    3. Any necessary context or background
+    The joke should be formatted in a way that makes it easy to read and understand.
+  agent: comedian
+
+review_joke_task:
+  description: >
+    Review the joke created by the comedian and evaluate its humor quality.
+    If the joke is not funny enough (rate it below 7/10), you MUST fail this task by including the exact phrase "TASK FAILED" in your response.
+    When you fail the task, provide specific feedback on what needs to be improved.
+    If the joke is funny (rate it 7/10 or higher), approve it and explain why it works.
+    
+    IMPORTANT: To fail this task and trigger the comedian to create a new joke, you MUST include the exact phrase "TASK FAILED" in your response.
+  expected_output: >
+    A detailed review of the joke that includes:
+    1. A humor rating (1-10)
+    2. Specific feedback on what works or doesn't work
+    3. Suggestions for improvement if the joke fails
+    4. A clear PASS or FAIL verdict (use "TASK FAILED" to fail the task)
+    
+    If the joke is not funny enough (below 7/10), you MUST include the phrase "TASK FAILED" in your response to trigger the comedian to create a new joke.
+  agent: joke_reviewer
